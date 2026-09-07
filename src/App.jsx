@@ -16,9 +16,17 @@ import {
   Calendar, 
   Search, 
   Sun, 
-  Moon,
-  ChevronRight,
-  HeartPulse
+  Moon, 
+  ChevronRight, 
+  HeartPulse, 
+  Clock, 
+  Trash2,
+  MapPin,
+  Camera,
+  Mic,
+  Bell,
+  Activity,
+  CheckCircle2
 } from 'lucide-react';
 
 function App() {
@@ -44,66 +52,106 @@ function App() {
       id: 'info-collect',
       title: '1. Information We Collect',
       icon: ClipboardList,
-      description: 'We collect information to provide better services to our users. This includes:',
+      description: 'ONMINT collects information strictly necessary to provide healthcare connectivity and fulfill medical service bookings across our digital platform:',
       items: [
-        'Full Name (for identification and record-keeping)',
-        'Mobile Number (for communication and verification)',
-        'Email Address (if provided, for billing and accounts)',
-        'Address and Location Details (for delivery and nursing services)',
-        'Service Booking Information (details of your requests)',
-        'Payment Related Information (processed securely through authorized gateways)'
+        'Personal Identity Information: Full name, mobile phone number, email address, gender, and date of birth for identity verification and account management.',
+        'Healthcare & Medical Data: Doctor prescription uploads, consultation history, diagnostic test orders, and health concerns shared voluntarily to receive care.',
+        'Address & Delivery Location: Residential/service address and geolocation coordinates for home nursing visits, pathology sample collections, and medicine doorstep delivery.',
+        'Healthcare Provider / Partner KYC Data: Medical council registration numbers, nursing qualifications, pharmacy drug licenses, pathology lab certifications, and ambulance registration details.',
+        'Payment & Transaction Metadata: Secure transaction identifiers, payment status, and order totals processed through authorized PCI-DSS compliant payment gateways (we do not store full credit/debit card numbers or CVVs).'
+      ]
+    },
+    {
+      id: 'app-permissions',
+      title: '2. Device Permissions & Purpose Disclosures',
+      icon: Lock,
+      description: 'In strict accordance with Google Play User Data and Permissions policies, our apps request only permissions essential to their core healthcare functionality:',
+      items: [
+        'Location Permission (ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION): Used to locate user addresses for emergency ambulance routing, assign nearest certified nurses, schedule home pathology sample pickup, and display nearby pharmacies.',
+        'Camera & Storage / Photos (CAMERA / READ_MEDIA_IMAGES): Used exclusively to let users take or upload photos of medical prescriptions, lab reports, and profile pictures, and to allow healthcare partners to upload verification licenses.',
+        'Microphone (RECORD_AUDIO): Used solely during live tele-consultation audio and video calls between patients and licensed doctors. Real-time audio streams are end-to-end transmitted and never recorded or stored without explicit mutual consent.',
+        'Notifications (POST_NOTIFICATIONS): Used to deliver real-time booking updates, medicine dispatch tracking, doctor consultation reminders, and emergency ambulance status.'
       ]
     },
     {
       id: 'info-use',
-      title: '2. Use of Information',
+      title: '3. Use of Information',
       icon: Info,
-      description: 'Your information is used solely to run and improve ONMINT services, specifically to:',
+      description: 'Your information is used solely to provide, operate, and enhance ONMINT healthcare services:',
       items: [
-        'Process and manage your healthcare service bookings',
-        'Connect you with authorized healthcare service providers',
-        'Provide responsive customer support and issue resolution',
-        'Improve platform performance, security, and user experience',
-        'Send service-related notifications, updates, and reminders'
+        'Facilitating and managing healthcare service bookings and consultations.',
+        'Connecting patients directly with verified independent doctors, nurses, pathology labs, pharmacies, and ambulance operators.',
+        'Providing responsive customer support, dispute resolution, and critical service notifications.',
+        'Maintaining platform security, authenticating logins via OTP, and preventing fraudulent activities.',
+        'Complying with statutory healthcare, legal, and financial regulatory requirements in India.'
       ]
     },
     {
       id: 'info-sharing',
-      title: '3. Information Sharing',
+      title: '4. Information Sharing & Non-Sale Guarantee',
       icon: Share2,
-      description: 'ONMINT maintains strict boundaries on how your information is shared:',
+      description: 'ONMINT enforces strict data privacy boundaries and never monetizes your personal data:',
       items: [
-        'ONMINT does not sell, trade, or rent user information to third parties.',
-        'Information is shared only with authorized healthcare service providers when necessary to fulfill requested services.',
-        'We may disclose information if required by law or to protect safety and rights.'
+        'Zero Data Sale: ONMINT does NOT sell, rent, lease, or trade personal or health data to third-party advertisers, data brokers, or commercial marketing firms.',
+        'Fulfillment Partners: Information is shared strictly with the specific healthcare professional (doctor, nurse, lab technician, pharmacist, ambulance driver) assigned to fulfill your requested booking.',
+        'Authorized Service Providers: Secure data transmission with certified third parties (such as cloud hosting and payment processors) under strict confidentiality agreements.',
+        'Legal Obligations: We may disclose information only when mandated by applicable law, court orders, or authorized government health directives.'
       ]
     },
     {
       id: 'data-security',
-      title: '4. Data Security',
-      icon: Lock,
-      description: 'We prioritize your data security and take it very seriously:',
+      title: '5. Data Security & Encryption',
+      icon: Shield,
+      description: 'We prioritize sensitive health data protection through enterprise-grade technical and organizational safeguards:',
       items: [
-        'We implement reasonable technical and organizational security measures.',
-        'Protects user information from unauthorized access, alteration, misuse, or disclosure.',
-        'Secure communication channels and data storage protocols are utilized.'
+        'End-to-End Encryption: All data transferred between your mobile app and our servers is secured via TLS 1.3 / HTTPS encryption protocols.',
+        'Access Controls: Strict role-based access restrictions ensuring only authorized personnel can access service logs for operational maintenance.',
+        'Regular Security Audits: Periodic system vulnerability reviews and encrypted database storage to safeguard against unauthorized access or breaches.'
+      ]
+    },
+    {
+      id: 'data-retention',
+      title: '6. Data Retention Policy & Schedules',
+      icon: Clock,
+      description: 'ONMINT maintains transparent, well-defined data retention schedules for all personal, medical, and operational data collected across our platforms:',
+      items: [
+        'User Profile & Account Information: Retained only for the active lifespan of your user account. Once you close or delete your account, your profile data is permanently purged.',
+        'Medical Records & Prescriptions: Retained only for as long as necessary to provide clinical continuity and fulfill patient-requested healthcare services, or as required by applicable statutory medical documentation laws in India.',
+        'Live Geolocation Data: Ephemeral. Real-time location coordinates used during active emergency ambulance routing, nurse home visits, or sample collections are retained only during the active service window and deleted within 24 hours of booking completion.',
+        'Technical, Diagnostic & Server Logs: Retained for a maximum period of 90 days for system integrity, security auditing, and crash troubleshooting, after which logs are automatically and permanently purged.',
+        'Healthcare Provider / Partner Verification Data: Retained during the active partnership period to verify clinical credentials and satisfy state medical licensing statutory compliance.',
+        'Financial & Transaction Metadata: Basic transaction reference records are retained solely for tax compliance, accounting, and anti-fraud statutory periods as required by Indian financial regulations.'
+      ]
+    },
+    {
+      id: 'data-deletion',
+      title: '7. User Data Deletion Policy & Step-by-Step Instructions',
+      icon: Trash2,
+      description: 'In full compliance with Google Play User Data policies and global privacy standards (including GDPR), users have the absolute right to request the permanent deletion of their account and all associated personal and health data at any time:',
+      items: [
+        'Method 1 — Dedicated Online Web Deletion Portal (No app required): Visit our official account deletion portal at https://onmint.in/delete-account.html, select your role, enter your registered mobile number or email with your password, and submit the request.',
+        'Method 2 — In-App Deletion Request: 1. Open the ONMINT User or Partner App. 2. Navigate to Profile / Account Settings. 3. Tap "Delete Account". 4. Confirm your password and tap "Submit Request".',
+        'Method 3 — Email Support Request: Send an email from your registered email address to onmintofficial@gmail.com with the subject "Account Deletion Request" including your registered phone number.',
+        'Scope of Erasure: Upon processing a deletion request, all personal profile fields, passwords, contact numbers, consultation records, uploaded prescription files, diagnostic reports, and notification logs are permanently and irreversibly purged from our active databases and cloud storage.',
+        'Fulfillment Timeline: Account deactivation is instantaneous, and complete data purging from production databases and backup archives is finalized within 30 business days.'
       ]
     },
     {
       id: 'user-consent',
-      title: '5. User Consent',
-      icon: Shield,
-      description: 'By using the ONMINT digital platform, you acknowledge and agree to:',
+      title: '8. User Rights & Consent',
+      icon: CheckCircle2,
+      description: 'By accessing or using the ONMINT platform, you acknowledge and agree to:',
       items: [
-        'Consent to the collection, processing, and use of information in accordance with this Privacy Policy.',
-        'You can update your communication preferences at any time.'
+        'Consent to the collection, processing, retention, and deletion protocols set forth in this Privacy Policy.',
+        'Right to Access & Rectify: You may review, modify, or update your profile and communication preferences at any time within app settings.',
+        'Right to Withdraw Consent: You can withdraw consent or delete your account at any time via in-app settings or our web deletion portal.'
       ]
     },
     {
       id: 'contact-us',
-      title: 'Contact Us',
+      title: 'Contact Us & Grievance Officer',
       icon: Phone,
-      description: 'If you have questions about this Privacy Policy or ONMINT operations, get in touch:',
+      description: 'If you have questions, privacy inquiries, or require grievance resolution regarding ONMINT services, get in touch with our team:',
       contact: true
     }
   ];
@@ -113,76 +161,75 @@ function App() {
       id: 'platform-services',
       title: '1. Platform Services',
       icon: HeartPulse,
-      description: 'ONMINT is a digital healthcare platform that facilitates access to the following services:',
+      description: 'ONMINT is a digital healthcare platform that facilitates direct connectivity to the following healthcare services:',
       items: [
-        'Doctor Consultation (connecting you with independent doctors)',
-        'Nursing Services (in-home nursing assistance)',
-        'Lab Tests & Diagnostics (sample collection and reports)',
-        'Medicine Delivery (pharmacy delivery to your doorstep)',
-        'Ambulance Services (emergency and non-emergency booking)',
-        'Blood Bank Services (facilitating blood requests & donation matching)'
+        'Online Doctor Consultations: Connecting users with certified independent medical practitioners for virtual advice.',
+        'Home Nursing Care: In-home healthcare and nursing assistance provided by qualified nurses.',
+        'Pathology & Lab Diagnostics: Booking lab tests with certified laboratories and home sample collection.',
+        'Doorstep Medicine Delivery: Facilitating orders and deliveries from licensed local retail pharmacies.',
+        'Ambulance Transit Services: Booking emergency and non-emergency ambulance patient transport.',
+        'Blood Bank Connect: Assisting blood requirement matching and voluntary donor coordination.'
       ]
     },
     {
       id: 'user-resp',
-      title: '2. User Responsibilities',
+      title: '2. User Responsibilities & Conduct',
       icon: User,
-      description: 'To maintain a safe and functional environment, all users must agree:',
+      description: 'To maintain a safe, respectful, and functional environment, all platform users agree to:',
       items: [
-        'Users must provide accurate, current, and complete information.',
-        'Responsible and lawful use of the platform is strictly required.',
-        'Misuse of healthcare or emergency services (such as false alarms) is strictly prohibited.'
+        'Provide accurate, authentic, and complete personal and medical history details.',
+        'Use the platform in compliance with all applicable laws, guidelines, and terms.',
+        'Strict Prohibition: Any misuse of emergency ambulance or healthcare services (such as prank requests or fraudulent bookings) is strictly prohibited and subject to legal action.'
       ]
     },
     {
       id: 'disclaimer',
-      title: '3. Healthcare Disclaimer',
+      title: '3. Healthcare & Medical Emergency Disclaimer',
       icon: Stethoscope,
-      description: 'ONMINT acts solely as a technology connector, not as a medical provider:',
+      description: 'Please review our technology facilitator role and medical emergency guidelines:',
       items: [
-        'ONMINT acts solely as a technology platform connecting users with independent providers.',
-        'Medical advice, treatments, lab reports, and ambulance care are the sole responsibility of the respective providers.',
-        'ONMINT does not warrant the clinical accuracy or completeness of services provided.'
+        'Technology Platform Role: ONMINT operates solely as a digital facilitator connecting users with independent licensed doctors, nurses, labs, and ambulance operators.',
+        'Clinical Responsibility: Medical advice, diagnoses, treatment plans, lab accuracy, and emergency transit care are the sole clinical responsibility of the independent licensed healthcare professionals.',
+        'Emergency Helplines: ONMINT virtual consultations are not a substitute for hospital emergency care. In acute or life-threatening medical emergencies, please call 108/112 or visit the nearest emergency medical center immediately.'
       ]
     },
     {
       id: 'payments',
-      title: '4. Payments & Refunds',
+      title: '4. Payments, Pricing & Refunds',
       icon: CreditCard,
-      description: 'Billing and refund guidelines for services ordered through ONMINT:',
+      description: 'Transparent pricing and billing terms for services booked through ONMINT:',
       items: [
-        'Service charges vary based on location, service type, and provider availability.',
-        'All pricing is transparently presented before booking confirmation.',
-        'Refunds and cancellations are subject to applicable service policies.'
+        'Transparent Charges: All consultation fees, test charges, medicine prices, and transit rates are clearly displayed prior to booking confirmation.',
+        'Payment Processing: Payments are processed through secure, authorized payment gateways compliant with Indian financial regulations.',
+        'Cancellations & Refunds: Eligible refunds for cancelled appointments or unavailable services are processed back to the original payment method in accordance with our cancellation policy.'
       ]
     },
     {
       id: 'liability',
       title: '5. Limitation of Liability',
       icon: AlertTriangle,
-      description: 'To the maximum extent permitted by law, ONMINT details its liability boundaries:',
+      description: 'To the maximum extent permissible under applicable law:',
       items: [
-        'ONMINT shall not be liable for medical outcomes, service delays, or provider actions.',
-        'No liability is accepted for technical interruptions, network failures, or offline delays.',
-        'ONMINT is not responsible for circumstances beyond its reasonable control.'
+        'ONMINT shall not be liable for medical outcomes, professional practitioner conduct, or clinical delays by independent providers.',
+        'No liability is accepted for third-party telecommunication interruptions, device incompatibility, or circumstances beyond reasonable platform control.'
       ]
     },
     {
       id: 'modifications',
-      title: '6. Modifications',
+      title: '6. Policy Modifications & Updates',
       icon: RefreshCw,
-      description: 'Terms are subject to updates to reflect changes in services or regulations:',
+      description: 'Terms and policies are periodically reviewed to reflect enhancements in services or regulatory updates:',
       items: [
-        'ONMINT reserves the right to update these Terms & Conditions at any time.',
-        'We will post notifications of updates on this page with the revision date.',
-        'Continued use of the platform constitutes acceptance of updated terms.'
+        'ONMINT reserves the right to revise these Terms & Conditions and Privacy Policy as required.',
+        'Updated versions will be published on this legal portal with the effective revision date indicated.',
+        'Continued usage of the ONMINT application constitutes acceptance of the latest updated terms.'
       ]
     },
     {
       id: 'contact-us-terms',
-      title: 'Contact Us',
+      title: 'Contact Us & Grievance Redressal',
       icon: Phone,
-      description: 'If you have questions about these Terms & Conditions, please contact us:',
+      description: 'For inquiries, complaints, or grievance redressal regarding these Terms & Conditions:',
       contact: true
     }
   ];
@@ -284,7 +331,7 @@ function App() {
             border: '1px solid var(--tag-border)'
           }}>
             <Calendar size={14} style={{ color: 'var(--accent-color)' }} />
-            Last Updated: June 2026
+            Last Updated: September 2026
           </div>
           
           <h1 style={{ 
@@ -461,12 +508,38 @@ function App() {
 
                     {section.items && (
                       <ul className="legal-list">
-                        {section.items.map((item, idx) => (
-                          <li key={idx} className="legal-list-item">
-                            <span className="legal-list-bullet">•</span>
-                            <span className="legal-body">{item}</span>
-                          </li>
-                        ))}
+                        {section.items.map((item, idx) => {
+                          const urlRegex = /(https?:\/\/[^\s,]+)/g;
+                          const parts = item.split(urlRegex);
+                          return (
+                            <li key={idx} className="legal-list-item">
+                              <span className="legal-list-bullet">•</span>
+                              <span className="legal-body">
+                                {parts.map((part, pIdx) => {
+                                  if (part.match(urlRegex)) {
+                                    return (
+                                      <a
+                                        key={pIdx}
+                                        href={part}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                          color: 'var(--accent-color)',
+                                          textDecoration: 'underline',
+                                          fontWeight: 700,
+                                          margin: '0 4px'
+                                        }}
+                                      >
+                                        {part}
+                                      </a>
+                                    );
+                                  }
+                                  return part;
+                                })}
+                              </span>
+                            </li>
+                          );
+                        })}
                       </ul>
                     )}
 

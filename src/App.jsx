@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Shield, 
-  FileText, 
-  Phone, 
-  Mail, 
-  User, 
-  Info, 
-  Lock, 
-  Share2, 
-  ClipboardList, 
-  Stethoscope, 
-  AlertTriangle, 
-  CreditCard, 
-  RefreshCw, 
-  Calendar, 
-  Search, 
-  Sun, 
-  Moon, 
-  ChevronRight, 
-  HeartPulse, 
-  Clock, 
+import {
+  Shield,
+  FileText,
+  Phone,
+  Mail,
+  User,
+  Info,
+  Lock,
+  Share2,
+  ClipboardList,
+  Stethoscope,
+  AlertTriangle,
+  CreditCard,
+  RefreshCw,
+  Calendar,
+  Search,
+  Sun,
+  Moon,
+  ChevronRight,
+  HeartPulse,
+  Clock,
   Trash2,
   MapPin,
   Camera,
@@ -127,13 +127,13 @@ function App() {
       id: 'data-deletion',
       title: '7. User Data Deletion Policy & Step-by-Step Instructions',
       icon: Trash2,
-      description: 'In full compliance with Google Play User Data policies and global privacy standards (including GDPR), users have the absolute right to request the permanent deletion of their account and all associated personal and health data at any time:',
+      description: 'Users may request deletion of their ONMINT account and associated personal and health data at any time, subject to applicable legal, regulatory, security, and statutory data-retention requirements:',
       items: [
-        'Method 1 — Dedicated Online Web Deletion Portal (No app required): Visit our official account deletion portal at https://onmint.in/delete-account.html, select your role, enter your registered mobile number or email with your password, and submit the request.',
-        'Method 2 — In-App Deletion Request: 1. Open the ONMINT User or Partner App. 2. Navigate to Profile / Account Settings. 3. Tap "Delete Account". 4. Confirm your password and tap "Submit Request".',
-        'Method 3 — Email Support Request: Send an email from your registered email address to onmintofficial@gmail.com with the subject "Account Deletion Request" including your registered phone number.',
-        'Scope of Erasure: Upon processing a deletion request, all personal profile fields, passwords, contact numbers, consultation records, uploaded prescription files, diagnostic reports, and notification logs are permanently and irreversibly purged from our active databases and cloud storage.',
-        'Fulfillment Timeline: Account deactivation is instantaneous, and complete data purging from production databases and backup archives is finalized within 30 business days.'
+        'Method 1 — Dedicated Online Web Deletion Portal (No app required): Visit our official account deletion portal at https://onmint.in/delete-account, select your role, enter your registered mobile number or email with your password, and submit the request.',
+        'Method 2 — Email Support Request: Send an email from your registered email address to onmintofficial@gmail.com with the subject "Account Deletion Request" and include your registered phone number or email address.',
+        'Scope of Erasure: Upon processing and verification of a deletion request, eligible personal profile information, passwords, contact details, uploaded files, and other associated user data are permanently deleted from our active databases and cloud storage, subject to applicable legal and regulatory retention requirements.',
+        'Fulfillment Timeline: Account deactivation is initiated after the deletion request is verified, and eligible data is permanently deleted from production systems. Data that must be retained for legal, regulatory, financial, security, or fraud-prevention purposes will be retained only for the period required by applicable law.',
+        'Important: Account deletion is permanent and cannot be undone. Users who no longer have access to their ONMINT account may use the web deletion portal or email support to request deletion.'
       ]
     },
     {
@@ -247,15 +247,15 @@ function App() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ 
-      display: 'flex', 
-      flexDirection: 'column', 
+    <div className="min-h-screen flex flex-col" style={{
+      display: 'flex',
+      flexDirection: 'column',
       minHeight: '100vh',
       backgroundColor: 'var(--bg-primary)',
       color: 'var(--text-primary)',
       transition: 'background-color 0.3s ease, color 0.3s ease'
     }}>
-      
+
       {/* Header Navigation */}
       <header className="header-glass" style={{ display: 'flex', alignItems: 'center' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
@@ -278,8 +278,8 @@ function App() {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <button 
-              onClick={toggleTheme} 
+            <button
+              onClick={toggleTheme}
               className="theme-toggle-btn"
               aria-label="Toggle theme"
             >
@@ -290,7 +290,7 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section 
+      <section
         style={{
           background: 'var(--hero-gradient)',
           color: 'var(--hero-text)',
@@ -315,13 +315,13 @@ function App() {
         }} />
 
         <div className="container animate-fade-in" style={{ position: 'relative', zIndex: 2 }}>
-          <div style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            gap: '8px', 
-            background: 'var(--tag-bg)', 
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            background: 'var(--tag-bg)',
             color: 'var(--tag-text)',
-            padding: '6px 16px', 
+            padding: '6px 16px',
             borderRadius: '9999px',
             marginBottom: '20px',
             fontSize: '0.85rem',
@@ -333,22 +333,22 @@ function App() {
             <Calendar size={14} style={{ color: 'var(--accent-color)' }} />
             Last Updated: September 2026
           </div>
-          
-          <h1 style={{ 
-            fontSize: 'calc(2.2rem + 1.2vw)', 
-            fontWeight: 800, 
-            letterSpacing: '-0.03em', 
+
+          <h1 style={{
+            fontSize: 'calc(2.2rem + 1.2vw)',
+            fontWeight: 800,
+            letterSpacing: '-0.03em',
             lineHeight: 1.15,
             marginBottom: '16px',
             fontFamily: 'var(--font-display)'
           }}>
             ONMINT Legal Center
           </h1>
-          
-          <p style={{ 
-            maxWidth: '600px', 
-            margin: '0 auto 32px auto', 
-            fontSize: '1.15rem', 
+
+          <p style={{
+            maxWidth: '600px',
+            margin: '0 auto 32px auto',
+            fontSize: '1.15rem',
             opacity: 0.85,
             fontWeight: 400,
             lineHeight: 1.5
@@ -362,14 +362,14 @@ function App() {
               width: 'calc(50% - 4px)',
               transform: activeTab === 'privacy' ? 'translateX(0)' : 'translateX(100%)'
             }} />
-            <button 
+            <button
               className={`tab-btn ${activeTab === 'privacy' ? 'active' : ''}`}
               onClick={() => { setActiveTab('privacy'); setSearchQuery(''); }}
             >
               <Shield size={16} />
               Privacy Policy
             </button>
-            <button 
+            <button
               className={`tab-btn ${activeTab === 'terms' ? 'active' : ''}`}
               onClick={() => { setActiveTab('terms'); setSearchQuery(''); }}
             >
@@ -382,7 +382,7 @@ function App() {
 
       {/* Main Body */}
       <main className="container" style={{ flexGrow: 1 }}>
-        
+
         {/* Search Bar Panel */}
         <div className="glass-card animate-fade-in" style={{
           padding: '1.25rem',
@@ -394,8 +394,8 @@ function App() {
           gap: '12px'
         }}>
           <Search size={20} style={{ color: 'var(--text-tertiary)' }} />
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder={`Search ONMINT ${activeTab === 'privacy' ? 'Privacy Policy' : 'Terms & Conditions'}...`}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -410,7 +410,7 @@ function App() {
             }}
           />
           {searchQuery && (
-            <button 
+            <button
               onClick={() => setSearchQuery('')}
               style={{
                 background: 'transparent',
@@ -428,11 +428,12 @@ function App() {
 
         {/* Desktop Sidebar + Main Column Layout */}
         <div className="main-layout">
-          
+
           {/* Sidebar Table of Contents */}
           <aside className="animate-slide-in" style={{ display: 'none' }}>
             {/* Table of contents will be visible only on desktop */}
-            <style dangerouslySetInnerHTML={{__html: `
+            <style dangerouslySetInnerHTML={{
+              __html: `
               @media (min-width: 1024px) {
                 aside.animate-slide-in {
                   display: block !important;
@@ -445,8 +446,8 @@ function App() {
                 <ul className="toc-list">
                   {currentSections.map(section => (
                     <li key={section.id}>
-                      <a 
-                        href={`#${section.id}`} 
+                      <a
+                        href={`#${section.id}`}
                         className={`toc-link ${activeSection === section.id ? 'active' : ''}`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -471,7 +472,7 @@ function App() {
                 <AlertTriangle size={48} style={{ margin: '0 auto 16px auto', color: 'var(--text-tertiary)' }} />
                 <h3>No sections match your search query</h3>
                 <p style={{ marginTop: '8px' }}>Try typing different keywords or reset your filter.</p>
-                <button 
+                <button
                   onClick={() => setSearchQuery('')}
                   style={{
                     marginTop: '16px',
@@ -491,9 +492,9 @@ function App() {
               filteredSections.map(section => {
                 const IconComponent = section.icon;
                 return (
-                  <article 
-                    id={section.id} 
-                    key={section.id} 
+                  <article
+                    id={section.id}
+                    key={section.id}
                     className="glass-card legal-section"
                     style={{ scrollMarginTop: '100px' }}
                   >

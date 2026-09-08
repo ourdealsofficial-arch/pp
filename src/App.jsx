@@ -104,7 +104,7 @@ function App() {
       icon: Shield,
       description: 'We prioritize sensitive health data protection through enterprise-grade technical and organizational safeguards:',
       items: [
-        'End-to-End Encryption: All data transferred between your mobile app and our servers is secured via TLS 1.3 / HTTPS encryption protocols.',
+        'Encryption in Transit: Data transferred between your mobile app and our servers is protected using TLS/HTTPS encryption protocols.',
         'Access Controls: Strict role-based access restrictions ensuring only authorized personnel can access service logs for operational maintenance.',
         'Regular Security Audits: Periodic system vulnerability reviews and encrypted database storage to safeguard against unauthorized access or breaches.'
       ]
@@ -115,7 +115,7 @@ function App() {
       icon: Clock,
       description: 'ONMINT maintains transparent, well-defined data retention schedules for all personal, medical, and operational data collected across our platforms:',
       items: [
-        'User Profile & Account Information: Retained only for the active lifespan of your user account. Once you close or delete your account, your profile data is permanently purged.',
+        'User Profile & Account Information: Retained while your user account is active. After a verified account deletion request is processed, eligible profile data is permanently deleted from our active systems, except for information that must be retained for legal, regulatory, financial, security, or fraud-prevention purposes.',
         'Medical Records & Prescriptions: Retained only for as long as necessary to provide clinical continuity and fulfill patient-requested healthcare services, or as required by applicable statutory medical documentation laws in India.',
         'Live Geolocation Data: Ephemeral. Real-time location coordinates used during active emergency ambulance routing, nurse home visits, or sample collections are retained only during the active service window and deleted within 24 hours of booking completion.',
         'Technical, Diagnostic & Server Logs: Retained for a maximum period of 90 days for system integrity, security auditing, and crash troubleshooting, after which logs are automatically and permanently purged.',
@@ -129,8 +129,9 @@ function App() {
       icon: Trash2,
       description: 'Users may request deletion of their ONMINT account and associated personal and health data at any time, subject to applicable legal, regulatory, security, and statutory data-retention requirements:',
       items: [
-        'Method 1 — Dedicated Online Web Deletion Portal (No app required): Visit our official account deletion portal at https://onmint.in/delete-account, select your role, enter your registered mobile number or email with your password, and submit the request.',
-        'Method 2 — Email Support Request: Send an email from your registered email address to onmintofficial@gmail.com with the subject "Account Deletion Request" and include your registered phone number or email address.',
+        'Method 1 — In-App Account Deletion: Open the ONMINT app, navigate to Profile / Account Settings, select "Delete Account", review the deletion information, and confirm the account deletion request. The exact navigation may vary between app versions.',
+        'Method 2 — Dedicated Online Web Deletion Portal (No app required): Visit our official account deletion portal at https://onmint.in/delete-account, select your role, enter your registered mobile number or email with your password, and submit the request.',
+        'Method 3 — Email Support Request: Send an email from your registered email address to onmintofficial@gmail.com with the subject "Account Deletion Request" and include your registered phone number or email address.',
         'Scope of Erasure: Upon processing and verification of a deletion request, eligible personal profile information, passwords, contact details, uploaded files, and other associated user data are permanently deleted from our active databases and cloud storage, subject to applicable legal and regulatory retention requirements.',
         'Fulfillment Timeline: Account deactivation is initiated after the deletion request is verified, and eligible data is permanently deleted from production systems. Data that must be retained for legal, regulatory, financial, security, or fraud-prevention purposes will be retained only for the period required by applicable law.',
         'Important: Account deletion is permanent and cannot be undone. Users who no longer have access to their ONMINT account may use the web deletion portal or email support to request deletion.'
